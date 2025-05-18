@@ -1,3 +1,6 @@
+// ! C++
+// CHUONG TRINH QUAN LY DANH SACH SINH VIEN (3 FILE CODE + 1 FILE LUU DU LIEU)
+
 #include "thuvien.h"
 
 ___TruongChinh304___ {
