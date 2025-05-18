@@ -2,6 +2,7 @@
 // CHUONG TRINH QUAN LY DANH SACH SINH VIEN (1 FILE CODE + 1 FILE LUU DU LIEU)
 
 #include <bits/stdc++.h>
+#include <conio.h> // lib xóa màn hình 
 #define pb push_back
 #define ___TruongChinh304___ signed main() // hàm main
 using namespace std;
@@ -10,16 +11,20 @@ using namespace std;
 struct sinh_vien {
     string ho_ten;
     int tuoi;
+    string mssv;
     float diem;
 };
 
 sinh_vien nhap_thong_tin(){
     sinh_vien tt;
-    cout << "\t(?) Nhap ten: "; 
+    cout << "\t\t(?) Nhap ten: "; 
     getline(cin, tt.ho_ten);
-    cout << "\t(?) Nhap tuoi: ";
+    cout << "\t\t(?) Nhap tuoi: ";
     cin >> tt.tuoi;
-    cout << "\t(?) Nhap diem: ";
+    cin.ignore();
+    cout << "\t\t(?) Nhap mssv: ";
+    getline(cin, tt.mssv);
+    cout << "\t\t(?) Nhap diem: ";
     cin >> tt.diem;
     cin.ignore();
     return tt;
@@ -36,6 +41,7 @@ vector<sinh_vien> doc_du_lieu_tu_file(const string& ten_file) {
         string tuoi_str, diem_str;
         getline(ss, tt.ho_ten, ';');
         getline(ss, tuoi_str, ';');
+        getline(ss, tt.mssv, ';');
         getline(ss, diem_str, ';');
         tt.tuoi = stoi(tuoi_str);
         tt.diem = stof(diem_str);
@@ -55,33 +61,41 @@ void in_giua_man_hinh(const string& cau) {
 
 // 1 in theo danh sách 
 void in_theo_danh_sach(const vector<sinh_vien>& danh_sach) {
-    cout << "\t+-----+--------------------------------+-------+-------+\n";
-    cout << "\t| STT | Ho Ten                         | Tuoi  | Diem  |\n";
-    cout << "\t+-----+--------------------------------+-------+-------+\n";
+    cout << "\t+-----+--------------------------------+-------+------------+-------+\n";
+    cout << "\t| STT | Ho Ten                         | Tuoi  | MSSV       | Diem  |\n";
+    cout << "\t+-----+--------------------------------+-------+------------+-------+\n";
     int stt = 1;
     for (const auto& tt : danh_sach) {
         cout << "\t| " << setw(3) << stt++ << " | "
-           << setw(30) << left << tt.ho_ten << " | "
-           << setw(5) << right << tt.tuoi << " | "
-           << setw(5) << fixed << setprecision(1) << tt.diem << " |\n";
+             << setw(30) << left << tt.ho_ten << " | "
+             << setw(5) << left << tt.tuoi << " | "
+             << setw(10) << left << tt.mssv << " | "
+             << setw(5) << fixed << setprecision(1) << tt.diem << " |\n";
     }
-    cout << "\t+-----+--------------------------------+-------+-------+\n";
+    cout << "\t+-----+--------------------------------+-------+------------+-------+\n";
 }
+
 
 // ghi vào file sau khi nhap them thong tin sinh vien moi 
 void ghi_vao_file(const string& ten_file, const vector<sinh_vien>& danh_sach) {
     ofstream file(ten_file);
     for (const auto& tt : danh_sach) {
-        file << tt.ho_ten << ';' << tt.tuoi << ';' << tt.diem << ";\n";
+        file << tt.ho_ten << ';' << tt.tuoi << ';' << tt.mssv << ';' << tt.diem << ";\n";
     }
 }
 
 // 2 them vao danh sach 
 void them_vao_danh_sach(vector<sinh_vien>& danh_sach){
-    sinh_vien tt = nhap_thong_tin();
-    danh_sach.pb(tt); // push_back (đẩy thông tin vào danh sách)
-    ghi_vao_file("D:\\Quanlysinhvien\\Quanlysinhvien_1F\\danhsach.txt", danh_sach);
-    cout << "\t(*) Da them sinh vien thanh cong !\n";
+    cout << "\t(?) Nhap so luong sinh vien muon them: ";
+    int slsv; cin >> slsv;
+    cin.ignore();
+    for(int i = 0; i < slsv; i++){
+        cout << "\t(!) Sinh vien" << i + 1 << "\n";
+        sinh_vien tt = nhap_thong_tin();
+        danh_sach.pb(tt); // push_back (đẩy thông tin vào danh sách)
+        ghi_vao_file("D:\\Quanlysinhvien\\Quanlysinhvien_1F\\danhsach.txt", danh_sach);
+    }
+    cout << "\t(*) Da them " << slsv << " sinh vien thanh cong !\n";
 }
 
 // 3 sua danh sach sinh vien 
@@ -104,6 +118,13 @@ void sua_danh_sach(vector<sinh_vien>& danh_sach){
     int tuoi_moi; cin >> tuoi_moi;
     if(tuoi_moi > 0){
         tt.tuoi = tuoi_moi;
+    }
+    cin.ignore();
+    cout << "\t\t(?) Nhap ma so sinh vien (nhap enter bo qua neu khong sua): ";
+    string mssv_moi; 
+    getline(cin, mssv_moi);
+    if(!mssv_moi.empty()){
+        tt.mssv = mssv_moi;
     }
     cout << "\t\t(?) Nhap diem moi (nhap -1 bo qua neu khong sua): ";
     float diem_moi;
@@ -141,29 +162,31 @@ void tim_kiem_sinh_vien(vector<sinh_vien>& danh_sach){
     int lua_chon; 
     cout << "\t1 - tim kiem theo so thu tu\n";
     cout << "\t2 - tim kiem theo ky tu ten\n";
+    cout << "\t3 - tim kiem theo mssv\n";
     cout << "\t(?) Nhap lua chon: "; cin >> lua_chon;
     if(lua_chon == 1){
         int stt; 
         cout << "\t(?) Nhap so thu tu muon tim kiem: "; cin >> stt;
         cin.ignore();
         if(stt < 1 || stt > danh_sach.size()){
-            cout << "\t(!) So thu tu khong hop le !\n";
+            cout << "\t\t(!) So thu tu khong hop le !\n";
             return;
         }
         sinh_vien& tt = danh_sach[stt - 1];
         // cout << "\tThong tin sinh vien thu " << stt << " !\n";
         // cout << "\t(-->) Ho ten: " << tt.ho_ten << "\t(-->) Tuoi: " << tt.tuoi << "\t(-->) Diem: " << tt.diem << "\n"; 
-        cout << "\t+-----+--------------------------------+-------+-------+\n";
-        cout << "\t| STT | Ho Ten                         | Tuoi  | Diem  |\n";
-        cout << "\t+-----+--------------------------------+-------+-------+\n";
+        cout << "\t+-----+--------------------------------+-------+------------+-------+\n";
+        cout << "\t| STT | Ho Ten                         | Tuoi  | MSSV       | Diem  |\n";
+        cout << "\t+-----+--------------------------------+-------+------------+-------+\n";
         cout << "\t| " << setw(3) << stt << " | "
-           << setw(30) << left << tt.ho_ten << " | "
-           << setw(5) << right << tt.tuoi << " | "
-           << setw(5) << fixed << setprecision(1) << tt.diem << " |\n";
-        cout << "\t+-----+--------------------------------+-------+-------+\n";
+             << setw(30) << left << tt.ho_ten << " | "
+             << setw(5) << left << tt.tuoi << " | "
+             << setw(10) << left << tt.mssv << " | "
+             << setw(5) << fixed << setprecision(1) << tt.diem << " |\n";
+        cout << "\t+-----+--------------------------------+-------+------------+-------+\n";
     } else if (lua_chon == 2){
         string nhap_ky_tu; 
-        cout << "\t(?) Nhap ky tu muon tim kiem: "; cin >> nhap_ky_tu;
+        cout << "\t\t(?) Nhap ky tu muon tim kiem: "; cin >> nhap_ky_tu;
         cin.ignore();
         vector<sinh_vien> danh_sach_tim_kiem;
         for(const auto& tt : danh_sach){
@@ -177,17 +200,45 @@ void tim_kiem_sinh_vien(vector<sinh_vien>& danh_sach){
             cout << "\t(!) Khong tim thay sinh vien nao phu hop!\n";
             return;
         }
-        cout << "\t+-----+--------------------------------+-------+-------+\n";
-        cout << "\t| STT | Ho Ten                         | Tuoi  | Diem  |\n";
-        cout << "\t+-----+--------------------------------+-------+-------+\n";
+        cout << "\t+-----+--------------------------------+-------+------------+-------+\n";
+        cout << "\t| STT | Ho Ten                         | Tuoi  | MSSV       | Diem  |\n";
+        cout << "\t+-----+--------------------------------+-------+------------+-------+\n";
         int stt = 1;
         for (const auto& tt : danh_sach_tim_kiem) {
             cout << "\t| " << setw(3) << stt++ << " | "
-               << setw(30) << left << tt.ho_ten << " | "
-               << setw(5) << right << tt.tuoi << " | "
-               << setw(5) << fixed << setprecision(1) << tt.diem << " |\n";
+                 << setw(30) << left << tt.ho_ten << " | "
+                 << setw(5) << left << tt.tuoi << " | "
+                 << setw(10) << left << tt.mssv << " | "
+                 << setw(5) << fixed << setprecision(1) << tt.diem << " |\n";
         }
-        cout << "\t+-----+--------------------------------+-------+-------+\n";
+        cout << "\t+-----+--------------------------------+-------+------------+-------+\n";
+    } else if (lua_chon == 3){
+        string nhap_ky_tu;
+        cout << "\t\t(?) Nhap mssv muon tim kiem: "; cin >> nhap_ky_tu;
+        cin.ignore();
+        vector<sinh_vien> danh_sach_tim_kiem;
+        for(const auto& tt : danh_sach){
+            string mssv = tt.mssv;
+            if(mssv.find(nhap_ky_tu) != string::npos){
+                danh_sach_tim_kiem.pb(tt);
+            }
+        }
+        if(danh_sach_tim_kiem.empty()){
+            cout << "\t(!) Khong tim thay sinh vien nao phu hop!\n";
+            return;
+        }
+        cout << "\t+-----+--------------------------------+-------+------------+-------+\n";
+        cout << "\t| STT | Ho Ten                         | Tuoi  | MSSV       | Diem  |\n";
+        cout << "\t+-----+--------------------------------+-------+------------+-------+\n";
+        int stt = 1;
+        for (const auto& tt : danh_sach_tim_kiem) {
+            cout << "\t| " << setw(3) << stt++ << " | "
+                 << setw(30) << left << tt.ho_ten << " | "
+                 << setw(5) << left << tt.tuoi << " | "
+                 << setw(10) << left << tt.mssv << " | "
+                 << setw(5) << fixed << setprecision(1) << tt.diem << " |\n";
+        }
+        cout << "\t+-----+--------------------------------+-------+------------+-------+\n";
     } else cout << "\t(!) Vui long chon lai 1 -> 2\n";    
 }
 
@@ -222,7 +273,7 @@ void thong_ke_danh_sach(vector<sinh_vien>& danh_sach){
     int slcdnl = 0, check = 0;
     for(int i = 0; i < danh_sach.size(); i++){
         if(danh_sach[i].diem == diem_max){
-            slcdnl++;
+            slcdnl++; 
         }
     }    
     for(int i = 0; i < danh_sach.size(); i++){
@@ -236,9 +287,8 @@ void thong_ke_danh_sach(vector<sinh_vien>& danh_sach){
 }
 
 ___TruongChinh304___ {
-    in_giua_man_hinh("CHUONG TRINH QUAN LY DANH SACH SINH VIEN\n");
-    int lua_chon; // tránh nhập sai lua chon bang ki tu chu (loi vong lap chua fix duoc)
     while (true) {
+        in_giua_man_hinh("CHUONG TRINH QUAN LY DANH SACH SINH VIEN\n");
         cout << "1 - In theo danh sach\n";
         cout << "2 - Them\n";
         cout << "3 - Sua\n";
@@ -248,7 +298,7 @@ ___TruongChinh304___ {
         cout << "7 - Thong ke\n";
         cout << "8 - Thoat\n";
         cout << "[-->] Nhap lenh: ";
-        cin >> lua_chon;
+        int lua_chon; cin >> lua_chon;
         cin.ignore();
         vector<sinh_vien> danh_sach = doc_du_lieu_tu_file("D:\\Quanlysinhvien\\Quanlysinhvien_1F\\danhsach.txt"); // load danh sach tu file (update liên tục)
         if (lua_chon == 1) {
@@ -278,6 +328,9 @@ ___TruongChinh304___ {
             in_giua_man_hinh("HEN GAP LAI BAN !");
             return 0; // thoat khoi chuong trinh (có thể thay bằng exit(0))
         } else cout << "\nNhap sai vui long nhap lai ! \n";
-        cout << "\n";
-    }
+        cout << "\nPress any key to continue ...";
+        getch(); // bắt phím bất kỳ 
+        system("cls"); // xóa màn hình cũ để hiển thị màn hình mới     
+    }    
+    return 0; 
 }
