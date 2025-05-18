@@ -1,8 +1,10 @@
 # CHƯƠNG TRÌNH QUẢN LÝ SINH VIÊN C++
 
 ## Giới thiệu
-Đây là chương trình quản lý sinh viên bằng ngôn ngữ c++ gồm nhiều tính năng cơ bản 
-Chạy trên môi trường dòng lệnh (commandline) với thiết kế giao diện đẹp mắt 
+- Đây là chương trình quản lý sinh viên bằng ngôn ngữ c++ gồm nhiều tính năng cơ bản 
+- Chạy trên môi trường dòng lệnh (commandline) với thiết kế giao diện đẹp mắt
+- Cảm hứng được lấy từ video của anh Vũ Nguyễn Coder
+- Link video anh Vũ : https://youtu.be/9WdQZp96Xwk?si=iXYpOn0YnpqPgzX8
 
 ## Video Record 
 - https://drive.google.com/file/d/1EFgBoXKGhyXUDVAhyr79iHXTcBKZhzX8/view?usp=drive_link
