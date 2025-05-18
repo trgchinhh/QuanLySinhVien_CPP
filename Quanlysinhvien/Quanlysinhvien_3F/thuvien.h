@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <conio.h> // lib xóa màn hình 
 #define pb push_back
 #define ___TruongChinh304___ signed main() // hàm main
 using namespace std;
@@ -6,6 +7,7 @@ using namespace std;
 struct sinh_vien {
     string ho_ten;
     int tuoi;
+    string mssv;
     float diem;
 };
 
