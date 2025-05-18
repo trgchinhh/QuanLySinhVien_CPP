@@ -4,19 +4,16 @@
 Đây là chương trình quản lý sinh viên bằng ngôn ngữ c++ gồm nhiều tính năng cơ bản 
 Chạy trên môi trường dòng lệnh (commandline) với thiết kế giao diện đẹp mắt 
 
+## Video Record 
+- https://drive.google.com/file/d/1EFgBoXKGhyXUDVAhyr79iHXTcBKZhzX8/view?usp=drive_link
+
 ## Chức năng
 - In ra bảng danh sách sinh viên
-- Thêm sinh viên mới 
+- Thêm thông tin sinh viên mới 
 - Sửa thông tin sinh viên
-    + Sửa [tên, tuổi, điêm]
 - Xóa thông tin sinh viên
 - Tìm kiếm thông tin sinh viên
-    + Tìm kiếm theo stt
-    + Tìm kiếm theo kí tự tên 
-- Sắp xếp (đang bảo trì)
-    + Sắp xếp theo tên (A -> Z)
-    + Sắp xếp theo tuổi (tăng dần)
-    + Sắp xếp theo điểm (tăng dần)
+- Sắp xếp thông tin (đang bảo trì)
 - Thống kê dữ liệu thông tin sinh viên
 
 ## Yêu cầu
@@ -25,7 +22,7 @@ Chạy trên môi trường dòng lệnh (commandline) với thiết kế giao d
 
 ## Cài đặt
 - Thiết lập đường dẫn file "danhsach.txt" sao cho đúng với đường dẫn file nằm trong bộ nhớ 
-- Hoặc có thể tự tạo thủ công file "danhsach.txt" từ máy 
+- Hoặc có thể tự tạo thủ công file "danhsach.txt" từ máy
 
 ## Lưu ý
 - Chương trình sẽ không chạy được nếu dường dẫn đến file "danhsach.txt" sai
@@ -33,4 +30,20 @@ Chạy trên môi trường dòng lệnh (commandline) với thiết kế giao d
 - Link file :  
 
 # Screenshot 
+## 1 In ra danh sách
+![image](https://github.com/user-attachments/assets/8c2f559a-9533-4705-ae50-7cbdc6609447)
 
+## 2 Thêm thông tin
+![image](https://github.com/user-attachments/assets/e9d23c0b-059d-4f23-b9b7-25c0e663136d)
+
+## 3 Sửa thông tin 
+![image](https://github.com/user-attachments/assets/d3689c01-3e21-4c34-b9a1-e6da48c26d56)
+
+## 4 Xóa thông tin 
+![image](https://github.com/user-attachments/assets/9ef3e3f9-1796-4b22-897a-3f998cd2db04)
+
+## 5 Tìm kiếm thông tin 
+![image](https://github.com/user-attachments/assets/59836b86-87ef-4aca-a979-cacb0cad9bdb)
+
+## 7 Thống kê thông tin
+![image](https://github.com/user-attachments/assets/07adf541-a787-4352-862f-583486a9640a)
