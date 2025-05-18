@@ -9,6 +9,7 @@
 ## Video Record 
 ### Video test file 
 - https://drive.google.com/file/d/1EFgBoXKGhyXUDVAhyr79iHXTcBKZhzX8/view?usp=drive_link
+### Link bài viết: https://www.facebook.com/share/p/1C8QhsLBQP/
 
 ## Chức năng
 - In ra bảng danh sách sinh viên
