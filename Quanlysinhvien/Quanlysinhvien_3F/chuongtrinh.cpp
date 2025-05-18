@@ -1,12 +1,8 @@
-// ! C++
-// CHUONG TRINH QUAN LY DANH SACH SINH VIEN (3 FILE CODE + 1 FILE LUU DU LIEU)
-
 #include "thuvien.h"
 
 ___TruongChinh304___ {
-    in_giua_man_hinh("CHUONG TRINH QUAN LY DANH SACH SINH VIEN\n");
-    int lua_chon; // tránh nhập sai lua chon bang ki tu chu (loi vong lap chua fix duoc)
     while (true) {
+        in_giua_man_hinh("CHUONG TRINH QUAN LY DANH SACH SINH VIEN\n");
         cout << "1 - In theo danh sach\n";
         cout << "2 - Them\n";
         cout << "3 - Sua\n";
@@ -16,9 +12,9 @@ ___TruongChinh304___ {
         cout << "7 - Thong ke\n";
         cout << "8 - Thoat\n";
         cout << "[-->] Nhap lenh: ";
-        cin >> lua_chon;
+        int lua_chon; cin >> lua_chon;
         cin.ignore();
-        vector<sinh_vien> danh_sach = doc_du_lieu_tu_file("D:\\danhsach.txt"); // load danh sach tu file (update liên tục)
+        vector<sinh_vien> danh_sach = doc_du_lieu_tu_file("D:\\Quanlysinhvien\\Quanlysinhvien_3F\\danhsach.txt"); // load danh sach tu file (update liên tục)
         if (lua_chon == 1) {
             cout << "\n[" << lua_chon << "] In danh sach sinh vien\n";
             in_theo_danh_sach(danh_sach);
@@ -46,6 +42,9 @@ ___TruongChinh304___ {
             in_giua_man_hinh("HEN GAP LAI BAN !");
             return 0; // thoat khoi chuong trinh (có thể thay bằng exit(0))
         } else cout << "\nNhap sai vui long nhap lai ! \n";
-        cout << "\n";
-    }
+        cout << "\nPress any key to continue ...";
+        getch(); // bắt phím bất kỳ 
+        system("cls"); // xóa màn hình cũ để hiển thị màn hình mới     
+    }    
+    return 0; 
 }
