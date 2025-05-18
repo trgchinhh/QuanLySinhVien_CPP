@@ -1,0 +1,10 @@
+Ho The An;18;10;
+Tran Thien An;18;10;
+Tran Minh Gia Bao;18;10;
+Nguyen Truong Chinh;18;10;
+Nguyen Manh Cuong;18;10;
+Tran Lam Hai Dang;18;10;
+Nguyen Bao Khanh;18;10;
+Nguyen Van Teo;18;9;
+Nguyen Van E;18;9.5;
+Nguyen Truong An;18;10;
