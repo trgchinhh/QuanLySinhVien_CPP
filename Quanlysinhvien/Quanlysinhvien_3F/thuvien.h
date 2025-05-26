@@ -22,3 +22,4 @@ void xoa_sinh_vien(vector<sinh_vien>& danh_sach);
 void chuyen_ve_ky_tu_thuong(string& kytu);
 void tim_kiem_sinh_vien(vector<sinh_vien>& danh_sach);
 void thong_ke_danh_sach(vector<sinh_vien>& danh_sach);
+void sap_xep_danh_sach(vector<sinh_vien>& danh_sach);
