@@ -227,8 +227,85 @@ void tim_kiem_sinh_vien(vector<sinh_vien>& danh_sach){
     } else cout << "\t(!) Vui long chon lai 1 -> 2\n";    
 }
 
-// 6 sap xep danh sach sinh vien  
-//void sap_xep_danh_sach(vector<sinh_vien>& danh_sach) {};
+// 6 sap xep danh sach sinh vien   
+void sap_xep_danh_sach(vector<sinh_vien>& danh_sach) {
+    cout << "\t1 - Sap xep theo ten (A -> Z)\n";
+    cout << "\t2 - Sap xep theo ten (Z -> A)\n";
+    cout << "\t3 - Sap xep theo diem (Cao -> Thap)\n";
+    cout << "\t4 - Sap xep theo diem (Thap -> Cao)\n";
+    cout << "\t5 - Sap xep theo tuoi (Tang dan)\n";
+    cout << "\t6 - Sap xep theo tuoi (Giam dan)\n";
+    cout << "\t(?) Nhap lua chon: ";
+    int lua_chon; 
+    cin >> lua_chon;
+    cin.ignore();
+    if (lua_chon == 1) {
+        sort(danh_sach.begin(), danh_sach.end(), [](const sinh_vien& a, const sinh_vien& b) {
+            string ten_a = a.ho_ten;
+            string ten_b = b.ho_ten;
+            chuyen_ve_ky_tu_thuong(ten_a);
+            chuyen_ve_ky_tu_thuong(ten_b);
+            return ten_a < ten_b;
+        });
+        cout << "\t\t(*) Da sap xep theo ten (A-Z)\n";
+    }
+    else if (lua_chon == 2) {
+        sort(danh_sach.begin(), danh_sach.end(), [](const sinh_vien& a, const sinh_vien& b) {
+            string ten_a = a.ho_ten;
+            string ten_b = b.ho_ten;
+            chuyen_ve_ky_tu_thuong(ten_a);
+            chuyen_ve_ky_tu_thuong(ten_b);
+            return ten_a > ten_b;
+        });
+        cout << "\t\t(*) Da sap xep theo ten (Z-A)\n";
+    }
+    else if (lua_chon == 3) {
+        sort(danh_sach.begin(), danh_sach.end(), [](const sinh_vien& a, const sinh_vien& b) {
+            return a.diem > b.diem;
+        });
+        cout << "\t\t(*) Da sap xep theo diem (cao -> thap)\n";
+    }
+    else if (lua_chon == 4) {
+        sort(danh_sach.begin(), danh_sach.end(), [](const sinh_vien& a, const sinh_vien& b) {
+            return a.diem < b.diem;
+        });
+        cout << "\t\t(*) Da sap xep theo diem (thap -> cao)\n";
+    }
+    else if (lua_chon == 5) {
+        sort(danh_sach.begin(), danh_sach.end(), [](const sinh_vien& a, const sinh_vien& b) {
+            return a.tuoi < b.tuoi;
+        });
+        cout << "\t\t(*) Da sap xep theo tuoi (tang dan)\n";
+    }
+    else if (lua_chon == 6) {
+        sort(danh_sach.begin(), danh_sach.end(), [](const sinh_vien& a, const sinh_vien& b) {
+            return a.tuoi > b.tuoi;
+        });
+        cout << "\t\t(*) Da sap xep theo tuoi (giam dan)\n";
+    }
+    else {
+        cout << "\t\t(!) Lua chon khong hop le!\n";
+        return;
+    }
+    cout << "\t\t+-----+--------------------------------+-------+------------+-------+\n";
+        cout << "\t\t| STT | Ho Ten                         | Tuoi  | MSSV       | Diem  |\n";
+        cout << "\t\t+-----+--------------------------------+-------+------------+-------+\n";
+        int stt = 1;
+        for (const auto& tt : danh_sach) {
+            cout << "\t\t| " << setw(3) << stt++ << " | "
+                 << setw(30) << left << tt.ho_ten << " | "
+                 << setw(5) << left << tt.tuoi << " | "
+                 << setw(10) << left << tt.mssv << " | "
+                 << setw(5) << fixed << setprecision(1) << tt.diem << " |\n";
+        }
+    cout << "\t\t+-----+--------------------------------+-------+------------+-------+\n";
+    cout << "\tLuu noi dung da sap xep vao file (y/n): ";
+    char lua_chon_ghi_vao_file; cin >> lua_chon_ghi_vao_file;
+    if(lua_chon_ghi_vao_file == 'y'){
+        ghi_vao_file("D:\\Quanlysinhvien\\Quanlysinhvien_1F\\danhsach.txt", danh_sach);
+        cout << "\tBan da chon ghi vao file !\n";
+    } else cout << "\tBan chon khong ghi vao file !\n";
+}
 
 // 7 Thong ke danh sach sinh vien
 void thong_ke_danh_sach(vector<sinh_vien>& danh_sach){
