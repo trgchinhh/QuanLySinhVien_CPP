@@ -17,7 +17,7 @@
 - Sửa thông tin sinh viên
 - Xóa thông tin sinh viên
 - Tìm kiếm thông tin sinh viên
-- Sắp xếp thông tin (đang bảo trì)
+- Sắp xếp thông tin 
 - Thống kê dữ liệu thông tin sinh viên
 
 ## Yêu cầu
