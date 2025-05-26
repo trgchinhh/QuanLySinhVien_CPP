@@ -49,5 +49,8 @@
 ## 5 Tìm kiếm thông tin 
 ![image](https://github.com/user-attachments/assets/59836b86-87ef-4aca-a979-cacb0cad9bdb)
 
+## 6 Sắp xếp thông tin theo lựa chọn
+![image](https://github.com/user-attachments/assets/2b8293e2-31dd-4611-916d-b0d16a3c77ea)
+
 ## 7 Thống kê thông tin
 ![image](https://github.com/user-attachments/assets/07adf541-a787-4352-862f-583486a9640a)
