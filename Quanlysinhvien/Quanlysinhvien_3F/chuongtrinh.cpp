@@ -32,8 +32,7 @@ ___TruongChinh304___ {
             tim_kiem_sinh_vien(danh_sach);    
         } else if (lua_chon == 6){
             cout << "\n[" << lua_chon << "] Sap xep sinh vien tu danh sach\n";
-            //sap_xep_danh_sach(danh_sach);
-            cout << "Tinh nang dang duoc bao tri !\n";
+            sap_xep_danh_sach(danh_sach);
         } else if (lua_chon == 7){
             cout << "\n[" << lua_chon << "] Thong ke danh sach sinh vien\n";
             thong_ke_danh_sach(danh_sach);
