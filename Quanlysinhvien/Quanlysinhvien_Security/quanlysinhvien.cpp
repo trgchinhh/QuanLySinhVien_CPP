@@ -1,10 +1,9 @@
 // ! C++
 // CHUONG TRINH QUAN LY DANH SACH SINH VIEN (1 FILE CODE + 1 FILE LUU DU LIEU)
 
-#include <bits/stdc++.h>
+#include "dangnhap.cpp"
 #include <conio.h> // lib xóa màn hình 
 #include <unistd.h> // lib dừng chương trình 
-#include "dangnhap.cpp"
 #define pb push_back
 #define ___TruongChinh304___ signed main() // hàm main
 using namespace std;
