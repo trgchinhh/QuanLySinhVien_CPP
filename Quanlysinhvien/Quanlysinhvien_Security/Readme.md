@@ -1,0 +1,6 @@
+(*) LƯU Ý
+- CÓ THỂ THAY BẰNG THUẬT TOÁN HASH KHÁC HAY ENCODE, ...
+- CHỈ CÓ 1 TÀI KHOẢN ĐƯỢC ĐĂNG KÝ VÀ ĐĂNG MỖI LẦN VÀO 
+- TĂNG CƯỜNG CHO TÍNH NĂNG XÓA TÀI KHOẢN BẰNG CÁCH NHẬP MẬT KHẨU 
+- TĂNG BẢO MẬT BẰNG CÁCH HASH DỮ LIỆU ĐẦU VÀO VÀ SO SÁNH VỚI DỮ LIỆU TRONG FILE (TRÁNH DÙNG DỮ LIỆU THẬT)
+  
