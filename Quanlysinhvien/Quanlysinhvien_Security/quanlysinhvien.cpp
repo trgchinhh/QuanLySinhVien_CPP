@@ -271,51 +271,44 @@ void sap_xep_danh_sach(vector<sinh_vien>& danh_sach) {
     int lua_chon; 
     cin >> lua_chon;
     cin.ignore();
+    auto lay_ten = [](const string& ho_ten) {
+        stringstream ss(ho_ten);
+        string tu, ten;
+        while (ss >> tu) ten = tu; 
+        chuyen_ve_ky_tu_thuong(ten);
+        return ten;
+    };
     if (lua_chon == 1) {
-        // Sắp xếp theo tên A-Z
-        sort(danh_sach.begin(), danh_sach.end(), [](const sinh_vien& a, const sinh_vien& b) {
-            string ten_a = a.ho_ten;
-            string ten_b = b.ho_ten;
-            chuyen_ve_ky_tu_thuong(ten_a);
-            chuyen_ve_ky_tu_thuong(ten_b);
-            return ten_a < ten_b;
+        sort(danh_sach.begin(), danh_sach.end(), [&](const sinh_vien& a, const sinh_vien& b) {
+            return lay_ten(a.ho_ten) < lay_ten(b.ho_ten);
         });
         cout << "\t\t(*) Da sap xep theo ten (A-Z)\n";
     }
     else if (lua_chon == 2) {
-        // Sắp xếp theo tên Z-A
-        sort(danh_sach.begin(), danh_sach.end(), [](const sinh_vien& a, const sinh_vien& b) {
-            string ten_a = a.ho_ten;
-            string ten_b = b.ho_ten;
-            chuyen_ve_ky_tu_thuong(ten_a);
-            chuyen_ve_ky_tu_thuong(ten_b);
-            return ten_a > ten_b;
+        sort(danh_sach.begin(), danh_sach.end(), [&](const sinh_vien& a, const sinh_vien& b) {
+            return lay_ten(a.ho_ten) > lay_ten(b.ho_ten);
         });
         cout << "\t\t(*) Da sap xep theo ten (Z-A)\n";
     }
     else if (lua_chon == 3) {
-        // Sắp xếp theo điểm cao -> thấp
         sort(danh_sach.begin(), danh_sach.end(), [](const sinh_vien& a, const sinh_vien& b) {
             return a.diem > b.diem;
         });
         cout << "\t\t(*) Da sap xep theo diem (cao -> thap)\n";
     }
     else if (lua_chon == 4) {
-        // Sắp xếp theo điểm thấp -> cao
         sort(danh_sach.begin(), danh_sach.end(), [](const sinh_vien& a, const sinh_vien& b) {
             return a.diem < b.diem;
         });
         cout << "\t\t(*) Da sap xep theo diem (thap -> cao)\n";
     }
     else if (lua_chon == 5) {
-        // Sắp xếp theo tuổi tăng dần
         sort(danh_sach.begin(), danh_sach.end(), [](const sinh_vien& a, const sinh_vien& b) {
             return a.tuoi < b.tuoi;
         });
         cout << "\t\t(*) Da sap xep theo tuoi (tang dan)\n";
     }
     else if (lua_chon == 6) {
-        // Sắp xếp theo tuổi giảm dần
         sort(danh_sach.begin(), danh_sach.end(), [](const sinh_vien& a, const sinh_vien& b) {
             return a.tuoi > b.tuoi;
         });
@@ -340,7 +333,7 @@ void sap_xep_danh_sach(vector<sinh_vien>& danh_sach) {
     cout << "\tLuu noi dung da sap xep vao file (y/n): ";
     char lua_chon_ghi_vao_file; cin >> lua_chon_ghi_vao_file;
     if(lua_chon_ghi_vao_file == 'y'){
-        ghi_vao_file("D:\\Quanlysinhvien\\Quanlysinhvien_1F\\danhsach.txt", danh_sach);
+        ghi_vao_file("danhsach.txt", danh_sach);
         cout << "\tBan da chon ghi vao file !\n";
     } else cout << "\tBan chon khong ghi vao file !\n";
 }
