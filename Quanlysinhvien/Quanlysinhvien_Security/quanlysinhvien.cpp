@@ -110,7 +110,7 @@ void them_vao_danh_sach(vector<sinh_vien>& danh_sach){
         cout << "\t(!) Sinh vien " << i + 1 << "\n";
         sinh_vien tt = nhap_thong_tin();
         danh_sach.pb(tt); // push_back (đẩy thông tin vào danh sách)
-        ghi_vao_file("D:\\Quanlysinhvien\\Quanlysinhvien_1F\\danhsach.txt", danh_sach);
+        ghi_vao_file("danhsach.txt", danh_sach);
     }
     cout << "\t(*) Da them " << slsv << " sinh vien thanh cong !\n";
 }
@@ -149,7 +149,7 @@ void sua_danh_sach(vector<sinh_vien>& danh_sach){
     if (diem_moi >= 0) {
         tt.diem = diem_moi;
     }
-    ghi_vao_file("D:\\Quanlysinhvien\\Quanlysinhvien_1F\\danhsach.txt", danh_sach);
+    ghi_vao_file("danhsach.txt", danh_sach);
     cin.ignore();
     cout << "\t(*) Da cap nhat thanh cong thong tin sinh vien so thu tu " << stt << "\n";
 }
@@ -166,7 +166,7 @@ void xoa_sinh_vien(vector<sinh_vien>& danh_sach) {
     danh_sach.erase(danh_sach.begin() + (stt - 1)); 
     sinh_vien& tt = danh_sach[stt-1];
     cout << "\t(*) Da xoa thong tin sinh vien " << tt.ho_ten << " - " << stt << " khoi danh sach\n";
-    ghi_vao_file("D:\\Quanlysinhvien\\Quanlysinhvien_1F\\danhsach.txt", danh_sach);
+    ghi_vao_file("danhsach.txt", danh_sach);
 }
 
 // hàm chuyển ký tự sang ký tự thường (không có ký tự hoa)
@@ -415,7 +415,7 @@ void chuong_trinh_dang_nhap(){
         system("cls");
         cin.ignore();
         string ten_nguoi_dung = "";
-        string duongdan = "D:\\Quanlysinhvien\\Quanlysinhvien_Security\\thongtin.txt";
+        string duongdan = "thongtin.txt";
         vector<TaiKhoan> danhsach = kiem_tra_du_lieu_tu_file(duongdan);
         if(lua_chon == 1){
             if(kiem_tra_file_rong(duongdan)){
@@ -479,7 +479,7 @@ void chuong_trinh_chinh(string ten_nguoi_dung){
         cout << "[-->] Nhap lenh: ";
         int lua_chon; cin >> lua_chon;
         cin.ignore();
-        vector<sinh_vien> danh_sach = doc_du_lieu_tu_file("D:\\Quanlysinhvien\\Quanlysinhvien_Security\\danhsach.txt"); // load danh sach tu file (update liên tục)
+        vector<sinh_vien> danh_sach = doc_du_lieu_tu_file("danhsach.txt"); // load danh sach tu file (update liên tục)
         if (lua_chon == 1) {
             cout << "\n[" << lua_chon << "] In danh sach sinh vien\n";
             in_theo_danh_sach(danh_sach);
@@ -516,5 +516,3 @@ ___TruongChinh304___ {
     chuong_trinh_dang_nhap();
     return 0; 
 }
-
-    
