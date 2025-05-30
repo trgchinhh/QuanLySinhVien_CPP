@@ -1,0 +1,10 @@
+Ho The An;18;DH524001;10;
+Tran Thien An;18;DH524002;10;
+Tran Minh Gia Bao;18;DH524003;10;
+Nguyen Truong Chinh;18;DH524004;10;
+Nguyen Manh Cuong;18;DH524005;10;
+Tran Lam Hai Dang;18;DH524006;10;
+Nguyen Bao Khanh;18;DH524007;10;
+Nguyen Thanh Phuc;18;DH524011;10;
+Nguyen Van Ti;18;DH524012;10;
+Nguyen Van Teoo;19;DH524013;9.5;
