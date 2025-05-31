@@ -18,5 +18,3 @@
 - TĂNG CƯỜNG CHO TÍNH NĂNG XÓA TÀI KHOẢN BẰNG CÁCH NHẬP MẬT KHẨU 
 - TĂNG BẢO MẬT BẰNG CÁCH HASH DỮ LIỆU ĐẦU VÀO VÀ SO SÁNH VỚI DỮ LIỆU TRONG FILE (TRÁNH DÙNG DỮ LIỆU THẬT)
   
-user: truongchinh304
-password: 22062020
