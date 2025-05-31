@@ -13,7 +13,8 @@
 ### Link bài viết: 
 - Bài viết: [Xem bài viết tại đây](https://www.facebook.com/share/p/1C8QhsLBQP/)
 ### Bản nâng cấp (tăng cường bảo mật)
-- Source: [Xem source tại đây](https://github.com/trgchinhh/QuanLySinhVien_CPP/tree/main/Quanlysinhvien/Quanlysinhvien_Security)
+- Mã nguồn: [Xem tại đây](https://github.com/trgchinhh/QuanLySinhVien_CPP/tree/main/Quanlysinhvien/Quanlysinhvien_Security)
+- Tải về kiểm thử: [Tải về tại đây](https://github.com/trgchinhh/QuanLySinhVien_CPP/tree/main/Quanlysinhvien/Quanlysinhvien_Security/Download)
 
 ## Chức năng
 ### Bản thường
