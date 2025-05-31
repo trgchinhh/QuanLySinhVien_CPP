@@ -39,7 +39,7 @@
 
 ## Lưu ý
 - Chương trình sẽ không chạy được nếu dường dẫn đến file "danhsach.txt" sai
-- Một vài ide như Visual Studio không hiểu thư viện <bits/stdc++.h> thì #include các thư viện trong file "thuviencoban.h"
+- Một vài ide như Visual Studio không hiểu thư viện <bits/stdc++.h> thì #include các thư viện trong file "thuviencanthiet.h"
 - Link file : [Xem tại đây](https://github.com/trgchinhh/QuanLySinhVien_CPP/blob/main/Quanlysinhvien/thuviencoban.h)  
 
 # Screenshot 
