@@ -11,7 +11,7 @@
    | |  | | \ \| |__| | |__| | |\  | |__| |  | |____| |  | |_| |_| |\  | |  | |
    |_|  |_|  \_\\____/ \____/|_| \_|\_____|   \_____|_|  |_|_____|_| \_|_|  |_|
 
- -->(*) LƯU Ý
+(*) LƯU Ý
 - THAY ĐƯỜNG DẪN CHO ĐÚNG VỚI ĐƯỜNG DẪN VÀO FILE  
 - CÓ THỂ THAY BẰNG THUẬT TOÁN HASH KHÁC HAY ENCODE, ...
 - CHỈ CÓ 1 TÀI KHOẢN ĐƯỢC ĐĂNG KÝ VÀ ĐĂNG MỖI LẦN VÀO 
