@@ -1,4 +1,7 @@
 # CHƯƠNG TRÌNH QUẢN LÝ SINH VIÊN C++
+<!--![image](https://github.com/user-attachments/assets/dd8e36ff-9e35-49a1-8c64-d4b05bc874d9)-->
+<!--![image](https://github.com/user-attachments/assets/55118021-e4c0-4de8-80e6-b987191852ba)-->
+![image](https://github.com/user-attachments/assets/298318d5-c424-4d3f-825b-ceb2f1f85f8a)
 
 ## Giới thiệu
 - Đây là chương trình quản lý sinh viên bằng ngôn ngữ c++ gồm nhiều tính năng cơ bản 
