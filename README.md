@@ -6,11 +6,11 @@
 - Cảm hứng được lấy từ video của anh Vũ Nguyễn Coder
 - Link video lấy cảm hứng: [Quản lý sinh viên Vũ Nguyễn Coder](https://youtu.be/9WdQZp96Xwk?si=iXYpOn0YnpqPgzX8)
 
-## Video Record 
-### Video test file 
-- Bản cũ: [Xem tại đây](https://drive.google.com/file/d/1EFgBoXKGhyXUDVAhyr79iHXTcBKZhzX8/view?usp=drive_link)
-- Bản nâng cấp: [Xem tại đây](https://drive.google.com/file/d/1E20zl08ipfqZVcFCxfBLLSCD4GIvrDVN/view?usp=drive_link) 
-### Link bài viết 
+## Liên kết 
+### Video demo chương trình 
+- Demo bản cũ: [Xem tại đây](https://drive.google.com/file/d/1EFgBoXKGhyXUDVAhyr79iHXTcBKZhzX8/view?usp=drive_link)
+- Demo bản nâng cấp: [Xem tại đây](https://drive.google.com/file/d/1E20zl08ipfqZVcFCxfBLLSCD4GIvrDVN/view?usp=drive_link) 
+### Link bài viết facebook 
 - Bài viết: [Xem tại đây](https://www.facebook.com/share/p/1C8QhsLBQP/)
 ### Bản nâng cấp (tăng cường bảo mật)
 - Mã nguồn: [Xem tại đây](https://github.com/trgchinhh/QuanLySinhVien_CPP/tree/main/Quanlysinhvien/Quanlysinhvien_Security)
