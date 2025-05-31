@@ -8,10 +8,10 @@
 
 ## Video Record 
 ### Video test file 
-- Bản cũ: [Video bản cũ](https://drive.google.com/file/d/1EFgBoXKGhyXUDVAhyr79iHXTcBKZhzX8/view?usp=drive_link)
-- Bản nâng cấp: [Video bản nâng cấp](https://drive.google.com/file/d/1E20zl08ipfqZVcFCxfBLLSCD4GIvrDVN/view?usp=drive_link) 
-### Link bài viết: 
-- Bài viết: [Xem bài viết tại đây](https://www.facebook.com/share/p/1C8QhsLBQP/)
+- Bản cũ: [Xem tại đây](https://drive.google.com/file/d/1EFgBoXKGhyXUDVAhyr79iHXTcBKZhzX8/view?usp=drive_link)
+- Bản nâng cấp: [Xem tại đây](https://drive.google.com/file/d/1E20zl08ipfqZVcFCxfBLLSCD4GIvrDVN/view?usp=drive_link) 
+### Link bài viết 
+- Bài viết: [Xem tại đây](https://www.facebook.com/share/p/1C8QhsLBQP/)
 ### Bản nâng cấp (tăng cường bảo mật)
 - Mã nguồn: [Xem tại đây](https://github.com/trgchinhh/QuanLySinhVien_CPP/tree/main/Quanlysinhvien/Quanlysinhvien_Security)
 - Tải về kiểm thử: [Tải về tại đây](https://github.com/trgchinhh/QuanLySinhVien_CPP/tree/main/Quanlysinhvien/Quanlysinhvien_Security/Download)
@@ -40,7 +40,7 @@
 ## Lưu ý
 - Chương trình sẽ không chạy được nếu dường dẫn đến file "danhsach.txt" sai
 - Một vài ide như Visual Studio không hiểu thư viện <bits/stdc++.h> thì #include các thư viện trong file "thuviencoban.h"
-- Link file :  
+- Link file : [Xem tại đây](https://github.com/trgchinhh/QuanLySinhVien_CPP/blob/main/thuviencoban.h)  
 
 # Screenshot 
 ## 1 In ra danh sách
