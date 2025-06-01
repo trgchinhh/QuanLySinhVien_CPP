@@ -22,7 +22,7 @@ using namespace std;
 
 // in từng dòng ra giữa màn hình console
 // console nhỏ : 120
-// console lớn : 200 (đang dùng )
+// console lớn : 200 (đang dùng)
 void in_giua_man_hinh(const string& cau) {
     int chieu_rong = 200;  
     int do_dai = cau.length();
