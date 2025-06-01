@@ -18,8 +18,8 @@
 ### Link bài viết facebook 
 - Bài viết: [Xem tại đây](https://www.facebook.com/share/p/1C8QhsLBQP/)
 ### Bản nâng cấp (tăng cường bảo mật)
-- Mã nguồn: [Xem tại đây](https://github.com/trgchinhh/QuanLySinhVien_CPP/tree/main/Quanlysinhvien/Quanlysinhvien_Security)
-- Tải về kiểm thử: [Tải về tại đây](https://github.com/trgchinhh/QuanLySinhVien_CPP/tree/main/Quanlysinhvien/Quanlysinhvien_Security/Download)
+- Mã nguồn: [Xem tại đây](https://github.com/trgchinhh/QuanLySinhVien/tree/main/Quanlysinhvien/Quanlysinhvien_Baomat/Source)
+- Tải về kiểm thử: [Tải về tại đây](https://github.com/trgchinhh/QuanLySinhVien/tree/main/Quanlysinhvien/Quanlysinhvien_Baomat/Download)
 
 ## Chức năng
 ### Bản thường
