@@ -13,25 +13,26 @@
 //    | |  |  _  /| |  | | |  | | . ` | | |_ |  | |    |  __  | | | | . ` |  __  |
 //    | |  | | \ \| |__| | |__| | |\  | |__| |  | |____| |  | |_| |_| |\  | |  | |
 //    |_|  |_|  \_\\____/ \____/|_| \_|\_____|   \_____|_|  |_|_____|_| \_|_|  |_|                 
+//                                                                               
 
-#include "dangnhap.cpp"
-#include <conio.h> // lib xóa màn hình 
-#include <unistd.h> // lib dừng chương trình 
+#include "dangnhap.cpp"   // phần đăng nhập 
 #define pb push_back
 #define ___TruongChinh304___ signed main() // hàm main
 using namespace std;
 
-// in dong ra giua man hinh
+// in từng dòng ra giữa màn hình console
+// console nhỏ : 120
+// console lớn : 200 (đang dùng )
 void in_giua_man_hinh(const string& cau) {
-    int chieu_rong = 120; // canh giữa màn hình terminal mini khoảng 120 
+    int chieu_rong = 200;  
     int do_dai = cau.length();
     int khoang_trang = (chieu_rong - do_dai) / 2;
     if (khoang_trang < 0) khoang_trang = 0;
     cout << string(khoang_trang, ' ') << cau;
 }
 
-// banner 
-void in_ra_banner(){
+// banner chính 
+void in_ra_banner_chinh(){
     string banner = 
     R"(Github: https://github.com/trgchinhh
   ____  _    _         _   _    _  __     __   _____ _____ _   _ _    _   __      _______ ______ _   _ 
@@ -43,11 +44,40 @@ void in_ra_banner(){
     )";
     stringstream ss(banner);
     string line;
+    cout << "\n";
+    while (getline(ss, line)) {
+        in_giua_man_hinh(line);
+        cout << endl;
+    }
+    cout << "\n";
+}
+
+// banner tạm biệt
+void in_ra_banner_tam_biet(){
+    string banner = 
+    R"(
+ _    _ ______ _   _     _____          _____     _               _____ 
+| |  | |  ____| \ | |   / ____|   /\   |  __ \   | |        /\   |_   _|
+| |__| | |__  |  \| |  | |  __   /  \  | |__) |  | |       /  \    | |  
+|  __  |  __| | . ` |  | | |_ | / /\ \ |  ___/   | |      / /\ \   | |  
+| |  | | |____| |\  |  | |__| |/ ____ \| |       | |____ / ____ \ _| |_ 
+|_|  |_|______|_| \_|   \_____/_/    \_\_|       |______/_/    \_\_____|
+    )";
+    stringstream ss(banner);
+    string line;
     while (getline(ss, line)) {
         in_giua_man_hinh(line);
         cout << endl;
     }
 }
+
+// tránh lỗi cin failbit
+void tranh_loi_nhap_so(){
+    if (cin.fail()) {
+        cin.clear(); 
+        cin.ignore(1000, '\n');
+    }
+}    
 
 // struct chung mỗi sv (có thể thêm thông tin khác như mssv, các điểm khác, ...)
 struct sinh_vien {
@@ -58,22 +88,25 @@ struct sinh_vien {
 };
 
 // sắp xếp hàm (tránh lỗi no scope)
-sinh_vien nhap_thong_tin();
-vector<sinh_vien> doc_du_lieu_tu_file(const string& ten_file);
-void ghi_vao_file(const string& ten_file, const vector<sinh_vien>& danh_sach);
-void in_giua_man_hinh(const string& cau);
-void in_ra_banner();
-void in_theo_danh_sach(const vector<sinh_vien>& danh_sach);
-void them_vao_danh_sach(vector<sinh_vien>& danh_sach);
-void sua_danh_sach(vector<sinh_vien>& danh_sach);
-void xoa_sinh_vien(vector<sinh_vien>& danh_sach);
-void chuyen_ve_ky_tu_thuong(string& kytu);
-void tim_kiem_sinh_vien(vector<sinh_vien>& danh_sach);
-void thong_ke_danh_sach(vector<sinh_vien>& danh_sach);
-void sap_xep_danh_sach(vector<sinh_vien>& danh_sach);
-void chuong_trinh_dang_nhap();
-void chuong_trinh_chinh(string ten_nguoi_dung);
+sinh_vien nhap_thong_tin();                                                         // thêm thông tin  
+vector<sinh_vien> doc_du_lieu_tu_file(const string& ten_file);                      // load dữ liệu file
+void ghi_vao_file(const string& ten_file, const vector<sinh_vien>& danh_sach);      // ghi vào file 
+void in_giua_man_hinh(const string& cau);                                           // in banner giữa màn hình 
+void in_ra_banner_chinh();                                                          // banner chính 
+void in_ra_banner_tam_biet();                                                       // banner tạm biệt
+void tranh_loi_nhap_so();                                                           // tránh lỗi cin failbit
+void in_theo_danh_sach(const vector<sinh_vien>& danh_sach);                         // in theo file
+void them_vao_danh_sach(vector<sinh_vien>& danh_sach);                              // thêm vào file
+void sua_danh_sach(vector<sinh_vien>& danh_sach);                                   // sửa thông tin
+void xoa_sinh_vien(vector<sinh_vien>& danh_sach);                                   // xóa thông tin
+void chuyen_ve_ky_tu_thuong(string& kytu);                                          // chuyển chữ hoa về chữ thường
+void tim_kiem_sinh_vien(vector<sinh_vien>& danh_sach);                              // tìm kiếm thông tin
+void thong_ke_danh_sach(vector<sinh_vien>& danh_sach);                              // thống kê thông tin
+void sap_xep_danh_sach(vector<sinh_vien>& danh_sach);                               // sắp xếp thông tin
+void chuong_trinh_dang_nhap();                                                      // đăng nhập (bảo mật)
+void chuong_trinh_chinh(string ten_nguoi_dung);                                     // chương trình chính
 
+// nhập thông tin sinh viên mới 
 sinh_vien nhap_thong_tin(){
     sinh_vien tt;
     cout << "\t\t(?) Nhap ten: "; 
@@ -195,6 +228,9 @@ void xoa_sinh_vien(vector<sinh_vien>& danh_sach) {
     if (stt < 1 || stt > danh_sach.size()) {
         cout << "\t(!) So thu tu khong hop le !\n";
         return;
+    } else {
+        tranh_loi_nhap_so();
+        cout << "(!) Vui long nhap so !\n";
     }
     danh_sach.erase(danh_sach.begin() + (stt - 1)); 
     sinh_vien& tt = danh_sach[stt-1];
@@ -289,7 +325,10 @@ void tim_kiem_sinh_vien(vector<sinh_vien>& danh_sach){
                  << setw(5) << fixed << setprecision(1) << tt.diem << " |\n";
         }
         cout << "\t+-----+--------------------------------+-------+------------+-------+\n";
-    } else cout << "\t(!) Vui long chon lai 1 -> 3\n";    
+    } else{
+        tranh_loi_nhap_so(); 
+        cout << "\t(!) Vui long chon lai 1 -> 3\n";    
+    }    
 }
 
 // 6 sap xep danh sach sinh vien  
@@ -348,6 +387,7 @@ void sap_xep_danh_sach(vector<sinh_vien>& danh_sach) {
         cout << "\t\t(*) Da sap xep theo tuoi (giam dan)\n";
     }
     else {
+        tranh_loi_nhap_so();
         cout << "\t(!) Vui long chon lai 1 -> 6\n";
         return;
     }
@@ -439,7 +479,7 @@ void quay_lai_chuong_trinh_dang_nhap(){
 void chuong_trinh_dang_nhap(){
     while(true){
         //in_giua_man_hinh("CHUONG TRINH QUAN LY DANH SACH SINH VIEN\n");
-        in_ra_banner();
+        in_ra_banner_chinh();
         cout << "1 - Dang ky\n";
         cout << "2 - Dang nhap\n";
         cout << "3 - Xoa tai khoan\n";
@@ -489,9 +529,10 @@ void chuong_trinh_dang_nhap(){
             } else cout << "(!) Chua co tai khoan nao duoc tao\n";
             quay_lai_chuong_trinh_dang_nhap();
         } else if(lua_chon == 4){
-            in_giua_man_hinh("HEN GAP LAI BAN !");
+            in_ra_banner_tam_biet();
             exit(0);
         } else {
+            tranh_loi_nhap_so();
             cout << "(!) Nhap sai ! Vui long nhap lai\n";
             quay_lai_chuong_trinh_dang_nhap();
         }    
@@ -500,8 +541,7 @@ void chuong_trinh_dang_nhap(){
 
 void chuong_trinh_chinh(string ten_nguoi_dung){
     while (true) {
-        //in_giua_man_hinh("CHUONG TRINH QUAN LY DANH SACH SINH VIEN\n");
-        in_ra_banner();
+        in_ra_banner_chinh();
         cout << "Xin chao " << ten_nguoi_dung << "\n\n";
         cout << "1 - In theo danh sach\n";
         cout << "2 - Them\n";
@@ -540,7 +580,10 @@ void chuong_trinh_chinh(string ten_nguoi_dung){
             cout << "\n[" << lua_chon << "] Ban chon thoat chuong trinh\n";
             system("cls");
             chuong_trinh_dang_nhap();
-        } else cout << "\nNhap sai vui long nhap lai ! \n";
+        } else { 
+            tranh_loi_nhap_so();
+            cout << "\nNhap sai vui long nhap lai ! \n";
+        }    
         cout << "\nNhan bat ky phim nao de tiep tuc ...";
         getch(); 
         system("cls");  
@@ -551,5 +594,3 @@ ___TruongChinh304___ {
     chuong_trinh_dang_nhap();
     return 0; 
 }
-
-    
