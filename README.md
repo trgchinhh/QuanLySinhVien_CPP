@@ -68,3 +68,6 @@
 
 ## 7 Thống kê thông tin
 ![image](https://github.com/user-attachments/assets/07adf541-a787-4352-862f-583486a9640a)
+
+## 8 Kết thúc
+![image](https://github.com/user-attachments/assets/faf88c22-18b1-4b0d-8c23-c7173721b6bf)
