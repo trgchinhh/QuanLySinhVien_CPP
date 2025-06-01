@@ -11,7 +11,10 @@
 //    | |  | | \ \| |__| | |__| | |\  | |__| |  | |____| |  | |_| |_| |\  | |  | |
 //    |_|  |_|  \_\\____/ \____/|_| \_|\_____|   \_____|_|  |_|_____|_| \_|_|  |_|
 
-#include <bits/stdc++.h>
+#include <conio.h>        // lib xóa màn hình 
+#include <unistd.h>       // lib dừng chương trình 
+#include <windows.h>      // lib dùng cho màu sắc
+#include <bits/stdc++.h>  // những lib còn lại 
 using namespace std;
 
 // -----------------------------------------------
