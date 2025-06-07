@@ -32,7 +32,7 @@ void in_ra_banner_chinh(){
 // banner tạm biệt
 void in_ra_banner_tam_biet(){
     string banner = 
-    R"(
+    R"(Github: https://github.com/trgchinhh
  _    _ ______ _   _     _____          _____     _               _____ 
 | |  | |  ____| \ | |   / ____|   /\   |  __ \   | |        /\   |_   _|
 | |__| | |__  |  \| |  | |  __   /  \  | |__) |  | |       /  \    | |  
@@ -122,6 +122,7 @@ void them_vao_danh_sach(vector<sinh_vien>& danh_sach){
     cout << "\t(?) Nhap so luong sinh vien muon them: ";
     int slsv; cin >> slsv;
     cin.ignore();
+    tranh_loi_nhap_so(); 
     for(int i = 0; i < slsv; i++){
         cout << "\t(!) Sinh vien " << i + 1 << "\n";
         sinh_vien tt = nhap_thong_tin();
@@ -136,6 +137,7 @@ void sua_danh_sach(vector<sinh_vien>& danh_sach){
     int stt; 
     cout << "\t(?) Nhap so thu tu muon sua thong tin: "; cin >> stt;
     cin.ignore();
+    tranh_loi_nhap_so(); 
     if(stt < 1 || stt > danh_sach.size()){
         cout << "\t(!) So thu tu khong hop le !\n";
         return;
@@ -175,13 +177,11 @@ void xoa_sinh_vien(vector<sinh_vien>& danh_sach) {
     int stt;
     cout << "\t(?) Nhap so thu tu sinh vien muon xoa: "; cin >> stt;
     cin.ignore();
+    tranh_loi_nhap_so();
     if (stt < 1 || stt > danh_sach.size()) {
         cout << "\t(!) So thu tu khong hop le !\n";
         return;
-    } else {
-        tranh_loi_nhap_so();
-        cout << "(!) Vui long nhap so !\n";
-    }
+    } 
     danh_sach.erase(danh_sach.begin() + (stt - 1)); 
     sinh_vien& tt = danh_sach[stt-1];
     cout << "\t(*) Da xoa thong tin sinh vien " << tt.ho_ten << " - " << stt << " khoi danh sach\n";
@@ -200,10 +200,12 @@ void tim_kiem_sinh_vien(vector<sinh_vien>& danh_sach){
     cout << "\t2 - tim kiem theo ky tu ten\n";
     cout << "\t3 - tim kiem theo mssv\n";
     cout << "\t(?) Nhap lua chon: "; cin >> lua_chon;
+    tranh_loi_nhap_so(); 
     if(lua_chon == 1){
         int stt; 
         cout << "\t(?) Nhap so thu tu muon tim kiem: "; cin >> stt;
         cin.ignore();
+        tranh_loi_nhap_so(); 
         if(stt < 1 || stt > danh_sach.size()){
             cout << "\t\t(!) So thu tu khong hop le !\n";
             return;
@@ -223,7 +225,7 @@ void tim_kiem_sinh_vien(vector<sinh_vien>& danh_sach){
     } else if (lua_chon == 2){
         string nhap_ky_tu; 
         cout << "\t\t(?) Nhap ky tu muon tim kiem: "; cin >> nhap_ky_tu;
-        cin.ignore();
+        cin.ignore(); 
         vector<sinh_vien> danh_sach_tim_kiem;
         for(const auto& tt : danh_sach){
             string ten_sv = tt.ho_ten;
@@ -276,7 +278,6 @@ void tim_kiem_sinh_vien(vector<sinh_vien>& danh_sach){
         }
         cout << "\t+-----+--------------------------------+-------+------------+-------+\n";
     } else{
-        tranh_loi_nhap_so(); 
         cout << "\t(!) Vui long chon lai 1 -> 3\n";    
     }    
 }
@@ -293,6 +294,7 @@ void sap_xep_danh_sach(vector<sinh_vien>& danh_sach) {
     int lua_chon; 
     cin >> lua_chon;
     cin.ignore();
+    tranh_loi_nhap_so(); 
     auto lay_ten = [](const string& ho_ten) {
         stringstream ss(ho_ten);
         string tu, ten;
@@ -337,7 +339,6 @@ void sap_xep_danh_sach(vector<sinh_vien>& danh_sach) {
         cout << "\t\t(*) Da sap xep theo tuoi (giam dan)\n";
     }
     else {
-        tranh_loi_nhap_so();
         cout << "\t(!) Vui long chon lai 1 -> 6\n";
         return;
     }
@@ -419,6 +420,10 @@ void thong_ke_danh_sach(vector<sinh_vien>& danh_sach){
     }
 }   
 
+// --------------------------------------------------------------------
+//  PHAN DANG KY / DANG NHAP 
+// --------------------------------------------------------------------
+
 string hash_password(const string& chuoi) {
     hash<string> ham_hash;
     size_t gia_tri_hash = ham_hash(chuoi);
@@ -428,12 +433,12 @@ string hash_password(const string& chuoi) {
 vector<TaiKhoan> kiem_tra_du_lieu_tu_file(const string& duong_dan) {
     vector<TaiKhoan> danh_sach;
     ifstream file(duong_dan);
-    string dong;
+    string dong;tranh_loi_nhap_so(); 
     while (getline(file, dong)) {
         stringstream ss(dong);
         TaiKhoan tk;
         getline(ss, tk.ten_dang_nhap, ';');
-        getline(ss, tk.mat_khau, ';');
+        getline(ss, tk.mat_khau);
         danh_sach.push_back(tk);
     }
     return danh_sach;
@@ -442,7 +447,7 @@ vector<TaiKhoan> kiem_tra_du_lieu_tu_file(const string& duong_dan) {
 void ghi_thong_tin_vao_file(const string& duong_dan, const vector<TaiKhoan>& danh_sach) {
     ofstream file(duong_dan);
     for (const auto& tai_khoan : danh_sach) {
-        file << tai_khoan.ten_dang_nhap << ';' << tai_khoan.mat_khau << ";\n";
+        file << tai_khoan.ten_dang_nhap << ';' << tai_khoan.mat_khau << "\n";
     }
 }
 
@@ -499,6 +504,10 @@ void quay_lai_chuong_trinh_dang_nhap(){
     chuong_trinh_dang_nhap();
 }
 
+// --------------------------------------------------------------------
+//  KET THUC PHAN DANG KY / DANG NHAP
+// --------------------------------------------------------------------
+
 void chuong_trinh_dang_nhap(){
     while(true){
         //in_giua_man_hinh("CHUONG TRINH QUAN LY DANH SACH SINH VIEN\n");
@@ -511,6 +520,7 @@ void chuong_trinh_dang_nhap(){
         int lua_chon; cin >> lua_chon;
         system("cls");
         cin.ignore();
+        tranh_loi_nhap_so(); 
         string ten_nguoi_dung = "";
         string duongdan = "thongtin.txt";
         vector<TaiKhoan> danhsach = kiem_tra_du_lieu_tu_file(duongdan);
@@ -555,7 +565,6 @@ void chuong_trinh_dang_nhap(){
             in_ra_banner_tam_biet();
             exit(0);
         } else {
-            tranh_loi_nhap_so();
             cout << "(!) Nhap sai ! Vui long nhap lai\n";
             quay_lai_chuong_trinh_dang_nhap();
         }    
@@ -574,9 +583,10 @@ void chuong_trinh_chinh(string ten_nguoi_dung){
         cout << "6 - Sap xep\n";
         cout << "7 - Thong ke\n";
         cout << "8 - Thoat\n";
-        cout << "[-->] Nhap lenh: ";
+        cout << "(?) Nhap lua chon: ";
         int lua_chon; cin >> lua_chon;
         cin.ignore();
+        tranh_loi_nhap_so(); 
         vector<sinh_vien> danh_sach = doc_du_lieu_tu_file("danhsach.txt"); // load danh sach tu file (update liên tục)
         if (lua_chon == 1) {
             cout << "\n[" << lua_chon << "] In danh sach sinh vien\n";
@@ -604,7 +614,6 @@ void chuong_trinh_chinh(string ten_nguoi_dung){
             system("cls");
             chuong_trinh_dang_nhap();
         } else { 
-            tranh_loi_nhap_so();
             cout << "\nNhap sai vui long nhap lai ! \n";
         }    
         cout << "\nNhan bat ky phim nao de tiep tuc ...";
