@@ -10,6 +10,7 @@
 - Chạy trên môi trường dòng lệnh (commandline) với thiết kế giao diện đẹp mắt
 - Cảm hứng được lấy từ video của anh Vũ Nguyễn Coder
 - Link video lấy cảm hứng: [Quản lý sinh viên Vũ Nguyễn Coder](https://youtu.be/9WdQZp96Xwk?si=iXYpOn0YnpqPgzX8)
+- Bản python: [Quản lý sinh viên bằng python](https://github.com/trgchinhh/quanlysinhvien_py)
 
 ## Liên kết 
 ### Video demo chương trình 
